@@ -1,39 +1,42 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import {  NavController, NavParams } from 'ionic-angular';
 import { NativeStorage } from '@ionic-native/native-storage';
 
 
-import { InscriptionPage } from '../inscription/inscription';
-import { InformationPage } from '../information/information';
-
 @Component({
-  selector: 'page-home',
-  templateUrl: 'home.html'
+  selector: 'page-inscription',
+  templateUrl: 'inscription.html',
 })
-export class HomePage {
+export class InscriptionPage {
+  public nom;
+  public prenom;
+  public email;
+  public telephone;
+  public adresse;
+  constructor(public navCtrl: NavController, public navParams: NavParams, private nativeStorage: NativeStorage) {
+  }
 
-  public username;
-  public password;
-  public adressevar = 'adresse';
-  public nom = 'nom';
-  public email= 'email';
-  public telephone= 'telephone';
-  constructor(public navCtrl: NavController,  private nativeStorage: NativeStorage) {
-
+  ionViewDidLoad() {
+    console.log('ionViewDidLoad InscriptionPage');
   }
 
 
 
-  connecter(){
-    console.log(this.username);
-    console.log(this.password);
+  inscription(){
+    console.log("on va t'inscrire poto le sang de la veine frêre");
+    console.log(this.nom);
+    console.log(this.prenom);
+    console.log(this.email);
+    console.log(this.telephone);
+    console.log(this.adresse);
 
-    this.nativeStorage.setItem('prenom', {property: this.username, anotherProperty: 'anotherValue'})
+
+    this.nativeStorage.setItem('nom', {property: this.nom, anotherProperty: 'anotherValue'})
     .then(
       () =>{
         console.log('Stored item!');
 
-        this.nativeStorage.setItem('nom', {property: this.nom, anotherProperty: 'anotherValue'})
+        this.nativeStorage.setItem('prenom', {property: this.prenom, anotherProperty: 'anotherValue'})
         .then(
           () =>{
             console.log('Stored item! prenom')
@@ -46,11 +49,10 @@ export class HomePage {
                 .then(
                   () =>{
                     console.log('Stored item! telephone');
-                    this.nativeStorage.setItem('adresse', {property: this.adressevar, anotherProperty: 'anotherValue'})
+                    this.nativeStorage.setItem('adresse', {property: this.adresse, anotherProperty: 'anotherValue'})
                   .then(
                     () =>{
                       console.log('Stored item adresse !');
-                      this.navCtrl.setRoot(InformationPage);
                     } ,
                     error => console.error('Error storing item', error)
 
@@ -83,11 +85,11 @@ export class HomePage {
 
 
     );
-    //console.log(this.user.password);
-  }
 
-  inscription(){
-    console.log('inscripton');
-    this.navCtrl.push(InscriptionPage);
-  }
+    /**  this.http.post('/user.json', this.nom).subscribe((data:any) => {
+    resolve();
+  }); **/
+}
+
+
 }
