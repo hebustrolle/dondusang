@@ -10,6 +10,7 @@ import { InscriptionPage } from '../pages/inscription/inscription';
 import { InformationPage } from '../pages/information/information';
 import { RdvPage } from '../pages/rdv/rdv';
 import { HistoriquePage } from '../pages/historique/historique';
+import { MaplieuPage } from '../pages/maplieu/maplieu';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -22,7 +23,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     InscriptionPage,
     InformationPage,
     HistoriquePage,
-    RdvPage
+    RdvPage,
+    MaplieuPage
   ],
   imports: [
     BrowserModule,
@@ -37,7 +39,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     InscriptionPage,
     InformationPage,
     HistoriquePage,
-    RdvPage
+    RdvPage,
+    MaplieuPage
   ],
   providers: [
     StatusBar,

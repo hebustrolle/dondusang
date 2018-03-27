@@ -8,6 +8,7 @@ import { ListPage } from '../pages/list/list';
 import { HistoriquePage } from '../pages/historique/historique';
 import { InformationPage } from '../pages/information/information';
 import { RdvPage } from '../pages/rdv/rdv';
+import { MaplieuPage } from '../pages/maplieu/maplieu';
 
 @Component({
   templateUrl: 'app.html'
@@ -26,7 +27,8 @@ export class MyApp {
     this.pages = [
       { title: 'Historique', component: HistoriquePage },
       { title: 'Information', component: InformationPage },
-      { title: 'Rendez-vous', component: RdvPage }
+      { title: 'Rendez-vous', component: RdvPage },
+      { title: 'Où nous trouver', component: MaplieuPage }
     ];
 
   }
