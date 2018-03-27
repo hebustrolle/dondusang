@@ -6,13 +6,62 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>Rendez-vous</ion-title>
-  </ion-navbar>
+    <ion-navbar>
+      <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>Rendez-vous</ion-title>
+    </ion-navbar>
+  </ion-header>
 
-</ion-header>
 
 
 <ion-content padding>
+  <ion-item>
+     <ion-label color="primary">Nom</ion-label>
+     <ion-input placeholder="Nom"></ion-input>
+   </ion-item>
+
+   <ion-item>
+      <ion-label color="primary">Prenom</ion-label>
+      <ion-input placeholder="Prenom"></ion-input>
+    </ion-item>
+
+
+    <ion-item>
+     <ion-label color="primary">Sexe</ion-label>
+     <ion-input placeholder="Sexe"></ion-input>
+   </ion-item>
+
+   <ion-item>
+     <ion-label color="primary">Groupe sanguin</ion-label>
+     <ion-input placeholder="Groupe sanguin"></ion-input>
+   </ion-item>
+
+   <ion-item>
+  <ion-label>Date</ion-label>
+  <ion-datetime displayFormat="MM/DD/YYYY" [(ngModel)]="myDate"></ion-datetime>
+</ion-item>
+
+<ion-item>
+  <ion-label>Lieu du prélèvement</ion-label>
+  <ion-select [(ngModel)]="lieu">
+    <ion-option value="lieu1">Lieu un</ion-option>
+    <ion-option value="lieu2">Lieu deux</ion-option>
+  </ion-select>
+</ion-item>
+
+<ion-item>
+  <ion-label>Type de prélèvement</ion-label>
+  <ion-select [(ngModel)]="type">
+    <ion-option value="sanguin">Sanguin</ion-option>
+    <ion-option value="Plaquette">Plaquette</ion-option>
+    <ion-option value="Plasma">Plasma</ion-option>
+  </ion-select>
+</ion-item>
+
+
+<button ion-button color="danger">Prendre un rendez-vous</button>
+
 
 </ion-content>
